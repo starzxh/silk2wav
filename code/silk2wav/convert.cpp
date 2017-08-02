@@ -67,7 +67,7 @@ void swap_endian(
 //#endif // _WIN32
 static SKP_int32 rand_seed = 1;
 
-int decode(char *bitInFileName, char *speechOutFileName)
+int silk2pcm(char *bitInFileName, char *speechOutFileName)
 {
 
 	//初始化解码过程中的参数
@@ -406,7 +406,7 @@ int main(){
 	string folderpath = tmp.substr(0, tmp.rfind("\\") + 1);
 	string savename = folderpath + filename + ".wav";
 	const char *outfile = savename.c_str();
-	SKP_int32 ret = decode(infile, (char *)outfile);
+	SKP_int32 ret = silk2pcm(infile, (char *)outfile);
 	ret = pcm2wav((char *)outfile);
 	cout << "转换完成!!! 文件保存路径为：" << endl << outfile << endl;
 	system("pause");
