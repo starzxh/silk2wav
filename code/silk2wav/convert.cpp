@@ -44,27 +44,6 @@ void swap_endian(
 #include <sys/time.h>   // Linux or Mac
 #endif
 
-//#ifdef _WIN32
-
-
-////获取高精度的时间值
-//unsigned long GetHighResolutionTime() 
-//{
-//
-//	LARGE_INTEGER lpPerformanceCount;
-//	LARGE_INTEGER lpFrequency;
-//	QueryPerformanceCounter(&lpPerformanceCount);
-//	QueryPerformanceFrequency(&lpFrequency);
-//	return (unsigned long)((1000000 * (lpPerformanceCount.QuadPart)) / lpFrequency.QuadPart);
-//}
-//#else   
-//unsigned long GetHighResolutionTime()
-//{
-//	struct timeval tv;
-//	gettimeofday(&tv, 0);
-//	return((tv.tv_sec * 1000000) + (tv.tv_usec));
-//}
-//#endif // _WIN32
 static SKP_int32 rand_seed = 1;
 
 int silk2pcm(char *bitInFileName, char *speechOutFileName)
